@@ -178,9 +178,8 @@ const Carousel = () => {
 
       {images.map((image, index) => (
         <div
-          className={`absolute inset-0 translate-x-[${
-            index * 100
-          }%] overflow-hidden`}
+          style={{ transform: `translateX(${index}00%)` }}
+          className={`absolute inset-0 overflow-hidden`}
           key={index}
           ref={pushimagesWrapperRef}
         >
