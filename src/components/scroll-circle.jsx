@@ -23,7 +23,7 @@ const CircularText = ({ text, radius = 100, className = "" }) => {
 
   return (
     <div
-      className={`relative ${className}`}
+      className={`relative ${className} hidden-initial`}
       style={{ width: radius * 2, height: radius * 2 }}
     >
       <div

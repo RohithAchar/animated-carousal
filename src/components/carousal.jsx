@@ -15,6 +15,11 @@ const Carousel = () => {
   useEffect(() => {
     gsap.registerPlugin(CustomEase);
     initialAnimation();
+
+    return () => {
+      gsap.killTweensOf(imagesWrapperRef.current);
+      gsap.killTweensOf(imagesRef.current);
+    };
   }, []);
 
   useEffect(() => {
@@ -141,6 +146,7 @@ const Carousel = () => {
   };
 
   const initialAnimation = () => {
+    gsap.to(".hidden-initial", { opacity: 1, duration: 0.5 });
     imageSlideIn();
     textSlideIn();
   };
@@ -179,7 +185,7 @@ const Carousel = () => {
       {images.map((image, index) => (
         <div
           style={{ transform: `translateX(${index}00%)` }}
-          className={`absolute inset-0 overflow-hidden`}
+          className={`absolute inset-0 overflow-hidden hidden-initial`}
           key={index}
           ref={pushimagesWrapperRef}
         >

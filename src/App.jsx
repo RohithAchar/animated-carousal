@@ -1,7 +1,6 @@
 import BottomBar from "./components/bottom-bar";
 import Carousel from "./components/carousal";
 import CircularText from "./components/scroll-circle";
-import ScrollCircle from "./components/scroll-circle";
 import TopBar from "./components/top-bar";
 
 const App = () => {

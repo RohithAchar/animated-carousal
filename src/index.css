@@ -3,3 +3,8 @@
 body {
   font-family: serif;
 }
+
+.hidden-initial {
+  opacity: 0;
+  /* transform: translateX(50%); Move out of view */
+}
