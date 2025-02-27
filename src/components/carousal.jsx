@@ -179,13 +179,13 @@ const Carousel = () => {
   };
 
   return (
-    <div className="w-screen h-screen overflow-hidden relative">
+    <div className="w-screen h-screen overflow-hidden relative hidden-initial">
       <HeroText ref={heroTextRef} />
 
       {images.map((image, index) => (
         <div
           style={{ transform: `translateX(${index}00%)` }}
-          className={`absolute inset-0 overflow-hidden hidden-initial`}
+          className={`absolute inset-0 overflow-hidden`}
           key={index}
           ref={pushimagesWrapperRef}
         >
