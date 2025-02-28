@@ -3,9 +3,9 @@ import gsap from "gsap";
 import { CustomEase } from "gsap/CustomEase";
 import HeroText from "./hero-text";
 
-const images = ["/montreal-neue-back.png", "/neue-machina-back.png"];
+const images = ["/img-1.jpg", "/img-2.jpg", "/img-3.jpg", "/img-4.jpg"];
 
-const Carousel = () => {
+const Carousel = ({ setIsLoading }) => {
   const [currentImage, setCurrentImage] = useState(0);
   const imagesWrapperRef = useRef([]);
   const imagesRef = useRef([]);
