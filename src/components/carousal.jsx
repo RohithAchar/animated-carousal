@@ -14,7 +14,23 @@ const Carousel = ({ setIsLoading }) => {
 
   useEffect(() => {
     gsap.registerPlugin(CustomEase);
-    initialAnimation();
+
+    // ✅ Preload images before animations
+    const preloadImages = () => {
+      let loadedCount = 0;
+      images.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => {
+          loadedCount++;
+          if (loadedCount === images.length) {
+            initialAnimation(); // Start animations after preloading
+          }
+        };
+      });
+    };
+
+    preloadImages();
 
     return () => {
       gsap.killTweensOf(imagesWrapperRef.current);
